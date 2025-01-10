@@ -249,10 +249,9 @@ function DownloadForm() {
             onFocus={(e) => (e.target.style.borderColor = '#ff0000')}
             onBlur={(e) => (e.target.style.borderColor = '#3f3f3f')}
           >
-            <option value="video_start_end">Video (start-end)</option>
-            <option value="video_start_length">Video (start-length)</option>
-            <option value="audio_start_end">Audio (start-end)</option>
-            <option value="audio_start_length">Audio (start-length)</option>
+            <option value="video_start_end">Video </option>
+            <option value="audio_start_end">Audio </option>
+
           </select>
         </div>
 
