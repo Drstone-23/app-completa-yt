@@ -20,30 +20,62 @@ function isValidTimeFormat(str) {
 }
 // ---------------------------------------------------------------
 
-// Estilos
+// Estilos actualizados
+const containerStyle = {
+  maxWidth: '800px',
+  margin: '0 auto',
+  padding: '20px',
+};
+
+const formStyle = {
+  backgroundColor: '#1a1a1a',
+  padding: '30px',
+  borderRadius: '15px',
+  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+  border: '1px solid #333',
+};
+
 const inputStyle = {
   width: '100%',
-  padding: '12px',
+  padding: '14px',
   margin: '8px 0',
   border: '1px solid #3f3f3f',
-  borderRadius: '4px',
-  backgroundColor: '#1f1f1f',
+  borderRadius: '8px',
+  backgroundColor: '#2a2a2a',
   color: '#ffffff',
-  transition: 'border-color 0.3s',
+  fontSize: '16px',
+  transition: 'all 0.3s ease',
+  '&:focus': {
+    borderColor: '#ff0000',
+    boxShadow: '0 0 0 2px rgba(255, 0, 0, 0.2)',
+  }
 };
 
 const buttonStyle = {
   width: '100%',
-  padding: '12px',
-  margin: '16px 0',
+  padding: '16px',
+  margin: '20px 0',
   border: 'none',
-  borderRadius: '4px',
+  borderRadius: '8px',
   backgroundColor: '#ff0000',
   color: '#ffffff',
-  fontSize: '16px',
+  fontSize: '18px',
   fontWeight: 'bold',
   cursor: 'pointer',
-  transition: 'background-color 0.3s',
+  transition: 'all 0.3s ease',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '10px',
+};
+
+const labelStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  color: '#ffffff',
+  marginBottom: '8px',
+  fontSize: '16px',
+  fontWeight: '500',
 };
 
 const progressBarStyle = {
@@ -139,7 +171,7 @@ function DownloadForm() {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <div style={containerStyle}>
       {/* Aquí puedes ubicar un primer bloque de publicidad */}
       <div
         style={{ marginBottom: '20px' }}
@@ -165,17 +197,21 @@ function DownloadForm() {
         }}
       />
 
-      <form onSubmit={handleDownload} style={{ backgroundColor: '#121212', padding: '20px', borderRadius: '8px' }}>
-        <div style={{ marginBottom: '16px' }}>
-          <label
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              color: '#ffffff',
-              marginBottom: '4px',
-            }}
-          >
-            <FaYoutube style={{ marginRight: '8px' }} /> URL:
+      <form onSubmit={handleDownload} style={formStyle}>
+        <h2 style={{ 
+          color: '#ffffff', 
+          textAlign: 'center', 
+          marginBottom: '30px',
+          fontSize: '28px',
+          fontWeight: '600'
+        }}>
+          Descargador de YouTube
+        </h2>
+
+        <div style={{ marginBottom: '20px' }}>
+          <label style={labelStyle}>
+            <FaYoutube style={{ marginRight: '8px', fontSize: '20px', color: '#ff0000' }} /> 
+            URL del video:
           </label>
           <input
             type="text"
@@ -184,74 +220,56 @@ function DownloadForm() {
             required
             style={inputStyle}
             placeholder="https://www.youtube.com/watch?v=..."
-            onFocus={(e) => (e.target.style.borderColor = '#ff0000')}
-            onBlur={(e) => (e.target.style.borderColor = '#3f3f3f')}
           />
         </div>
 
-        <div style={{ marginBottom: '16px' }}>
-          <label
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              color: '#ffffff',
-              marginBottom: '4px',
-            }}
-          >
-            <FaClock style={{ marginRight: '8px' }} /> Tiempo inicio (HH:MM:SS):
-          </label>
-          <input
-            type="text"
-            value={start}
-            onChange={(e) => setStart(e.target.value)}
-            style={inputStyle}
-            onFocus={(e) => (e.target.style.borderColor = '#ff0000')}
-            onBlur={(e) => (e.target.style.borderColor = '#3f3f3f')}
-          />
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+          gap: '20px',
+          marginBottom: '20px'
+        }}>
+          <div>
+            <label style={labelStyle}>
+              <FaClock style={{ marginRight: '8px', fontSize: '18px' }} /> 
+              Tiempo inicio:
+            </label>
+            <input
+              type="text"
+              value={start}
+              onChange={(e) => setStart(e.target.value)}
+              style={inputStyle}
+              placeholder="HH:MM:SS"
+            />
+          </div>
+
+          <div>
+            <label style={labelStyle}>
+              <FaClock style={{ marginRight: '8px', fontSize: '18px' }} /> 
+              Fin o duración:
+            </label>
+            <input
+              type="text"
+              value={endOrLength}
+              onChange={(e) => setEndOrLength(e.target.value)}
+              style={inputStyle}
+              placeholder="HH:MM:SS"
+            />
+          </div>
         </div>
 
-        <div style={{ marginBottom: '16px' }}>
-          <label
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              color: '#ffffff',
-              marginBottom: '4px',
-            }}
-          >
-            <FaClock style={{ marginRight: '8px' }} /> Fin o duración (HH:MM:SS):
-          </label>
-          <input
-            type="text"
-            value={endOrLength}
-            onChange={(e) => setEndOrLength(e.target.value)}
-            style={inputStyle}
-            onFocus={(e) => (e.target.style.borderColor = '#ff0000')}
-            onBlur={(e) => (e.target.style.borderColor = '#3f3f3f')}
-          />
-        </div>
-
-        <div style={{ marginBottom: '16px' }}>
-          <label
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              color: '#ffffff',
-              marginBottom: '4px',
-            }}
-          >
-            <FaMusic style={{ marginRight: '8px' }} /> Tipo:
+        <div style={{ marginBottom: '20px' }}>
+          <label style={labelStyle}>
+            <FaMusic style={{ marginRight: '8px', fontSize: '18px' }} /> 
+            Formato:
           </label>
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            style={inputStyle}
-            onFocus={(e) => (e.target.style.borderColor = '#ff0000')}
-            onBlur={(e) => (e.target.style.borderColor = '#3f3f3f')}
+            style={{...inputStyle, cursor: 'pointer'}}
           >
-            <option value="video_start_end">Video </option>
-            <option value="audio_start_end">Audio </option>
-
+            <option value="video_start_end">Video completo</option>
+            <option value="audio_start_end">Solo audio (MP3)</option>
           </select>
         </div>
 
@@ -261,13 +279,25 @@ function DownloadForm() {
           onMouseEnter={(e) => (e.target.style.backgroundColor = '#cc0000')}
           onMouseLeave={(e) => (e.target.style.backgroundColor = '#ff0000')}
         >
-          <FaDownload style={{ marginRight: '8px' }} /> Iniciar Descarga
+          <FaDownload style={{ fontSize: '20px' }} /> 
+          Descargar ahora
         </button>
 
         {statusMsg && (
-          <div style={{ marginTop: '16px', color: '#ffffff' }}>
+          <div style={{ 
+            marginTop: '20px', 
+            padding: '15px',
+            backgroundColor: '#2a2a2a',
+            borderRadius: '8px',
+            color: '#ffffff' 
+          }}>
             <strong>{statusMsg}</strong>
-            <div style={progressBarStyle}>
+            <div style={{
+              ...progressBarStyle,
+              height: '10px',
+              marginTop: '12px',
+              backgroundColor: '#3f3f3f',
+            }}>
               <div
                 style={{
                   position: 'absolute',
@@ -276,7 +306,8 @@ function DownloadForm() {
                   width: `${progress}%`,
                   height: '100%',
                   backgroundColor: '#ff0000',
-                  transition: 'width 0.3s',
+                  borderRadius: '4px',
+                  transition: 'width 0.3s ease',
                 }}
               />
             </div>
