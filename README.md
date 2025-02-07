@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# 🚀 Video & Audio Downloader
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenido a **Video & Audio Downloader**, una aplicación web súper sencilla pero poderosa para descargar videos o solo audio en la **máxima calidad**. 🎥🎶
 
-## Available Scripts
+💻 **Construida con:**
+- **React** para el frontend ⚛️
+- **FastAPI** en el backend ⚡
+- **Node.js** como proxy 🚀
+- **Docker** para el despliegue fácil 🐳
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌟 Características
+✅ Descarga **video + audio** o **solo audio** 🎵
+✅ Siempre en **la mejor calidad disponible** 🔥
+✅ Interfaz sencilla e intuitiva 🖥️
+✅ Desplegable con **Docker** sin complicaciones 🐳
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Instalación y Ejecución
 
-### `npm test`
+### 🔧 Requisitos previos
+Antes de empezar, asegúrate de tener **Docker** instalado:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🔗 [Descargar Docker](https://www.docker.com/get-started)
 
-### `npm run build`
+### 📥 Clonar el repositorio
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/Drstone-23/app-completa-yt.git
+cd app-completa-yt
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🚀 Construcción y ejecución con Docker
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1️⃣ **Construir y levantar los contenedores:**
+```bash
+docker-compose up --build
+```
 
-### `npm run eject`
+Esto iniciará los siguientes servicios:
+- 🖥 **FastAPI Backend** en `http://localhost:8000`
+- 🔄 **Node.js Proxy** en `http://localhost:3000`
+- 🎨 **React Frontend** en `http://localhost:3001`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2️⃣ **Acceder a la aplicación:**
+   - Abre 👉 `http://localhost:3001`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠 Configuración adicional del backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Antes de iniciar, instala las dependencias necesarias:
+```bash
+cd backend
+pip install -r requirements.txt
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎯 Uso de la Aplicación
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1️⃣ **Introduce la URL del video** 🎥
+2️⃣ **Elige la opción de descarga:**
+   - **🎵 Solo Audio**
+   - **🎬 Video + Audio**
+3️⃣ **Haz clic en Descargar** y espera un momento ⏳
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 Contribuciones
 
-### Analyzing the Bundle Size
+¡Nos encanta recibir mejoras y nuevas ideas! Si quieres contribuir:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1️⃣ **Haz un fork** del repo 🚀
+2️⃣ Crea una rama nueva: `git checkout -b nueva-feature`
+3️⃣ Realiza tus cambios y súbelos: `git push origin nueva-feature`
+4️⃣ Abre un **Pull Request** 💡
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📜 Licencia
 
-### Advanced Configuration
+📄 Este proyecto está bajo la licencia **MIT**, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+¡Felices descargas! 🚀🎶
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
