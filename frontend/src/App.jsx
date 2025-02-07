@@ -36,7 +36,7 @@ function App() {
         <DownloadForm />
       </main>
       <footer style={footerStyle}>
-        <p>&copy; 2023 Video Downloader. All rights reserved.</p>
+        <p>&copy; dr</p>
       </footer>
     </div>
   );
